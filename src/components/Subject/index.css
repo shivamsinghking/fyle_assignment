@@ -1,0 +1,11 @@
+.subject-container{
+  padding: 10px;
+}
+
+.subject-table thead{
+  background-color: orange;
+}
+
+.subject-table td{
+ padding: 10px;
+}

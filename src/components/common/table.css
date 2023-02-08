@@ -1,0 +1,11 @@
+.table-container{
+  border: 2px solid var(--grey1);
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.table-container th,td{
+  min-width: 200px;
+  text-align: center;
+  border: 2px solid var(--grey1);
+}

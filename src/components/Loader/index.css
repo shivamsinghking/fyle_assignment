@@ -1,0 +1,24 @@
+.loader-container{
+  height: 3vw;
+  width: 3vw;
+  border: 5px;
+  border-radius: 50%;
+  border-top: 5px solid grey;
+  border-bottom: 5px solid grey;
+  border-left: 5px solid black;
+  border-right: 5px solid black;
+  animation: spin .75s infinite linear;
+  margin: auto;
+
+}
+
+@keyframes spin {
+  0%  {-webkit-transform: rotate(0deg);}
+  100% {-webkit-transform: rotate(360deg);}   
+}
+
+.loader-msg{
+  text-align: center;
+  font-weight: bolder;
+  font-size: 20px;
+}
