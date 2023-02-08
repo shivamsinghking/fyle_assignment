@@ -23,3 +23,8 @@ Your app is ready to be deployed!
 1. SEARCH_URL = "https://openlibrary.org/search.json" [ Get data of books, author, publishers etc. but author Name or book Name ]
 2. SUBJECT_URL = "https://openlibrary.org/subjects/<subject_name>.json" [ Get books related to particular subject ]
 These are open source REST API's for getting data related to books.
+
+# Features Implemented
+1. Resuable Components -> Pagination, Table, Search, Form Input 
+2. Caching api response using local storage, having an expiry time limit
+3. React routing => 1. " / " , 2. " /:subject "
