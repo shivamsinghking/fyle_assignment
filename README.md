@@ -19,7 +19,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-# Api dependecies - 
+# Api dependencies - 
 1. SEARCH_URL = "https://openlibrary.org/search.json" [ Get data of books, author, publishers etc. but author Name or book Name ]
 2. SUBJECT_URL = "https://openlibrary.org/subjects/<subject_name>.json" [ Get books related to particular subject ]
 These are open source REST API's for getting data related to books.
