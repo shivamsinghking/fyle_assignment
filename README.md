@@ -25,6 +25,6 @@ Your app is ready to be deployed!
 These are open source REST API's for getting data related to books.
 
 # Features Implemented
-1. Resuable Components -> Pagination, Table, Search, Form Input 
+1. Resuable Components -> Pagination, Table, Search, Form Input, Loader 
 2. Caching api response using local storage, having an expiry time limit
 3. React routing => 1. " / " , 2. " /:subject "
