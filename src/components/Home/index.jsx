@@ -30,6 +30,7 @@ const Home = () => {
   /*eslint-enable*/
 
   const getBooksHandler = async () => {
+    if(searchValue.length === 0) return ;
     let offset = pageNumber * booksPerPage;
     setLoading(true);
     const res = await getBooks({ q: searchValue, limit: booksPerPage, offset });
@@ -54,7 +55,6 @@ const Home = () => {
     setSearchValue(val.trim());
   };
 
-  console.log(pageCount, pageNumber);
   return (
     <div className="home-container">
       <div className="subject-sub-container">

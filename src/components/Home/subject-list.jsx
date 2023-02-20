@@ -25,6 +25,8 @@ const SubjectList = () => {
   /*eslint-enable*/
 
   const getSubject = async () => {
+    if(search.length === 0) return ;
+    
     const res = await getBooksBySubjectName(search, { limit: 5, offset: 0 });
     if (res) {
       setTotalWork(res.work_count);

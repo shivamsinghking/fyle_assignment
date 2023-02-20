@@ -1,6 +1,6 @@
 export const SEARCH_URL = "https://openlibrary.org/search.json"
 export const SUBJECT_URL = "https://openlibrary.org/subjects/"
-export const localStorageTimeLimit = 12000;
+export const localStorageTimeLimit = 1200000;
 
 export const booksPerPage = 10;
 export const limitPerPage = 10;
@@ -17,3 +17,11 @@ export const subjectActiveFields = [
   {field: 'authors', label: 'Authors', col: 2},
   {field: 'first_publish_year', label: 'First Publish year', col: 3}
 ]
+
+export const cachingOptions = {
+  max: 20,
+  ttl: 1200000,
+  updateAgeOnGet: true
+}
+
+const apiCache = new LRUCache(cachingOptions)

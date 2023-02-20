@@ -1,6 +1,6 @@
 import React from 'react'
 import FormInput from '../common/FormInput';
-const Search = ({timeLimit = 1000, callbackApi, ...props}) => {
+const Search = ({timeLimit = 2000, callbackApi, ...props}) => {
 
   // const [search, setSearch] = useState('')
   const deboundInput = () => {

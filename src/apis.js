@@ -1,6 +1,6 @@
-import ls from 'localstorage-ttl'
+import LRUCache from 'lru-cache'
 import { createQueryParams } from "./helperFn"
-import { SEARCH_URL, SUBJECT_URL, localStorageTimeLimit } from "./constants"
+import { SEARCH_URL, SUBJECT_URL, cachingOptions } from "./constants"
 
 const createFullURL = (URL, queryParams = {}) => {
   let reqUrl = URL;
@@ -10,16 +10,20 @@ const createFullURL = (URL, queryParams = {}) => {
   return reqUrl
 }
 
+/**
+ * @param {*} url: String 
+ * @returns 
+ */
 const getHandler = async (url) => {
   return new Promise((resolve, reject) => {
-    if(ls.get(url)) return resolve(ls.get(url))
+    if(apiCache.has(url)) return resolve(apiCache.get(url))
     fetch(url)
     .then(res => {
       if(res && res.status === 200) return res.json();
       throw res;
     })
     .then(data => {
-      ls.set(url, data, [localStorageTimeLimit])
+      apiCache.set(url, data)
       resolve(data)
     })
     .catch(err => {
@@ -29,6 +33,11 @@ const getHandler = async (url) => {
   })
 }
 
+/**
+ * 
+ * @param {*} query : object
+ * @returns 
+ */
 export const getBooks = async (query) => {
   const url = createFullURL(SEARCH_URL, query)
   try {
